@@ -7,7 +7,14 @@
   min-height: 100vh;
   width: 100%;
   /* Fondo atractivo para la vista de escritorio */
-  background: linear-gradient(135deg, rgb(42, 49, 42) 0%, #569950 100%);
+  background: linear-gradient(
+    135deg,
+    rgb(80, 85, 80) 0%,
+    #365e33 25%,
+    rgb(139, 187, 99) 50%,
+    rgb(41, 119, 41) 75%,
+    rgb(27, 107, 27) 100%
+  );
   padding: 1.25rem; /* 20px de padding */
   font-family: "Hepta Slab", serif;
 }
