@@ -1,230 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Mi pagina Web</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="Pie.css" />
+    <title>Login con Clave Estática</title>
+    <link rel="stylesheet" href="login.css" />
   </head>
   <body>
-    <!--LOGO Y MENU-->
+    <section class="login-container">
+      <div class="login-box">
+        <h1>Iniciar sesión</h1>
 
-    <nav class="topheader">
-      <a href="" class="LOGO">
-        <img src="Uni-logo_transparente_granate.png" height="70" with="70" />
-      </a>
-      <ul class="Menu-Horizontal">
-        <li>
-          <a href="">Creditos</a>
-          <ul class="Menu-Vertical">
-            <li><a href="">Creditios</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="">Cuentas</a>
-          <ul class="Menu-Vertical">
-            <li><a href="">Cta Sueldo</a></li>
-            <li><a href="">Club Emprendedor</a></li>
-            <li><a href="">Yape y plin</a></li>
-            <li><a href="">Depositos</a></li>
-          </ul>
-        </li>
-        <li><a href="">Seguros</a></li>
-        <li><a href="#contactanos">Contactanos</a></li>
-      </ul>
-    </nav>
-    <section class="Seccion-creditos">
-      <div class="Cont-general-Creditos">
-        <div class="Cont-creditos-texto">
-          <h2>Seccion de Creditos</h2>
-          <p>
-            Creemos que el futuro esta en tus manos y que juntos lograremos a
-            hacer muchos mas porque unidos somos muchos mas
-          </p>
-        </div>
-        <div class="Cont-creditos-imagen">
-          <img src="../imagen1.jpg" alt="" />
-        </div>
-      </div>
-    </section>
-    <section class="seccion-seguros">
-      <div class="cont-gral-seguros">
-        <div class="cont-seguros-texto">
-          <h2>Seccion Seguros</h2>
-          <p>
-            Solicita tu Tarjeta de Crédito Pide tu tarjeta Interbank 100%
-            online, en minutos. Aplican T&C Interbank Obtén grandes beneficios
-            Con tu tarjeta de crédito acumulas Millas Benefit con tus compras
-            para canjearlas por lo que quieras. Interbank Tarjeta de Crédito sin
-            membresía Solo úsala todos los meses, sin monto mínimo de compra, y
-            la membresía de tu tarjeta de crédito Interbank será gratis.
-            Interbank La mejor experiencia Interbank Adquiere tu tarjeta y
-            disfruta de descuentos exclusivos y hasta 36 cuotas sin intereses.
-          </p>
-          <button>Leer mas...</button>
-        </div>
-        <div class="cont-seguros-video">
-          <iframe
-            width="450"
-            height="260"
-            src="https://www.youtube.com/embed/TKYRV1nSzpo"
-            title="¡Ahora recarga tu tarjeta del Metropolitano con Plin de Interbank!"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </div>
-    </section>
-    <section class="seccion-formulario" id="contactanos">
-      <div class="cont-gral-formulario">
-        <h2>Formulario de registro</h2>
-        <p>Complete todos los datos</p>
-      </div>
-      <form class="formulario">
-        <div class="campo">
-          <label for="nombre">Nombres:</label>
-          <input
-            type="text"
-            id="nombre"
-            name="nombre"
-            placeholder="ingrese su nombre"
-          />
-        </div>
-        <div class="campo">
-          <label for="pais">Pais:</label>
-          <select name="pais" id="pais">
-            <option value="">Seleccione un pais</option>
-            <option value="Peru">Peru</option>
-            <option value="Mexico">Mexico</option>
-            <option value="Argentina">Argentina</option>
-            <option value="Colombia">Colombia</option>
-          </select>
-        </div>
-        <div class="campo">
-          <label>Interes:</label>
-          <ul class="lista-checkbox">
-            <li>
-              <label for=""
-                ><input
-                  type="checkbox"
-                  name="intereses"
-                  value="teconologia"
-                />Tecnologia</label
-              >
-            </li>
-            <li>
-              <label for=""
-                ><input
-                  type="checkbox"
-                  name="intereses"
-                  value="educacion"
-                />Educacion</label
-              >
-            </li>
-            <li>
-              <label for=""
-                ><input
-                  type="checkbox"
-                  name="intereses"
-                  value="idiomas"
-                />Idiomas</label
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="campo">
-          <label for="">Genero:</label>
-          <ul class="lista-radio">
-            <li>
-              <label for=""
-                ><input
-                  type="radio"
-                  name="genero"
-                  id="masculino"
-                />Masculino</label
-              >
-            </li>
-            <li>
-              <label for=""
-                ><input
-                  type="radio"
-                  name="genero"
-                  id="femenino"
-                />Femenino</label
-              >
-            </li>
-            <li>
-              <label for=""
-                ><input type="radio" name="genero" id="otro" />Otro</label
-              >
-            </li>
-          </ul>
-        </div>
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
-
-    <!--pie de pagina-->
-    <section id="footer">
-      <footer class="footer">
-        <div class="footer-container">
-          <!-- Logo y nombre de sitio -->
-          <div class="footer-brand">
-            <img
-              src="Imagenes/senati-logo.png"
-              alt="Logo"
-              class="footer-logo"
+        <form onsubmit="return validarLogin(event);">
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Ingresar email"
+              required
             />
-            <p>SENATI</p>
-            <small>© 2025 Todos los derechos reservados</small>
           </div>
 
-          <!-- Enlaces legales -->
-          <div class="footer-links">
-            <h4>Legal</h4>
-            <a href="/Documentos/3.politica-privacidad.pdf"
-              >Política de Privacidad</a
-            >
-            <!-- Dentro de href llama a un documento pdf con la poltica-->
-            <a href="#">Términos y Condiciones</a>
-            <!-- Dentro de href llama a un documento pdf con los terminos y condiciones-->
-            <a href="/Documentos/LeyProteccionDatos.pdf">Protección de Datos</a>
+          <div class="input-group">
+            <label for="password">Contraseña (password)</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Ingresar contraseña"
+              required
+            />
           </div>
 
-          <!-- Redes sociales con íconos personalizados -->
-          <div class="footer-social">
-            <h4>Síguenos</h4>
-            <a href="#"
-              ><img
-                src="https://cdn-icons-png.flaticon.com/512/145/145802.png"
-                alt="Facebook"
-                class="social-icon"
-            /></a>
-            <a href="#"
-              ><img
-                src="https://cdn-icons-png.flaticon.com/512/145/145812.png"
-                alt="Instagram"
-                class="social-icon"
-            /></a>
-            <a href="#"
-              ><img
-                src="https://cdn-icons-png.flaticon.com/512/145/145807.png"
-                alt="LinkedIn"
-                class="social-icon"
-            /></a>
-            <a href="#"
-              ><img
-                src="https://cdn-icons-png.flaticon.com/512/145/145806.png"
-                alt="Twitter"
-                class="social-icon"
-            /></a>
-          </div>
-        </div>
-      </footer>
+          <button type="submit" class="login-button">Iniciar Sesión</button>
+        </form>
+      </div>
     </section>
+
+    <script src="login.js"></script>
   </body>
 </html>
